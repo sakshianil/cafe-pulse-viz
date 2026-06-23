@@ -1,5 +1,7 @@
 # Cafe Pulse Viz
 
+![Cafe Pulse Viz dashboard preview](docs/cafe-pulse-viz-dashboard-preview.svg)
+
 Cafe Pulse Viz is a polished React dashboard for exploring cafe sales data from a CSV file. It turns everyday transaction records into clear business views: revenue, order volume, average ticket size, product mix, hourly demand, weekday patterns, and product performance by time of day.
 
 This repository is designed as a portfolio-ready analytics project: it includes a public-facing showcase page, a live interactive dashboard, reusable chart components, filter controls, and a lightweight CSV data workflow.
