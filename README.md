@@ -1,74 +1,124 @@
-# Welcome to your Lovable project
+# Cafe Pulse Viz
 
-## Project info
+Cafe Pulse Viz is a polished React dashboard for exploring cafe sales data from a CSV file. It turns everyday transaction records into clear business views: revenue, order volume, average ticket size, product mix, hourly demand, weekday patterns, and product performance by time of day.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This repository is designed as a portfolio-ready analytics project: it includes a public-facing showcase page, a live interactive dashboard, reusable chart components, filter controls, and a lightweight CSV data workflow.
 
-## How can I edit this code?
+## Live Project
 
-There are several ways of editing your application.
+- GitHub repository: <https://github.com/sakshianil/cafe-pulse-viz>
+- Dataset location: [`public/data/coffee_sales.csv`](public/data/coffee_sales.csv)
 
-**Use Lovable**
+## What It Shows
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- CSV ingestion in the browser with PapaParse
+- Derived KPI calculations from transaction-level records
+- Interactive filters for date range, product, weekday, and time of day
+- Recharts visualizations for revenue, products, weekdays, hours, and daypart mix
+- Portfolio-style product presentation with a real dashboard section
+- Responsive React UI built with Tailwind CSS and shadcn/ui primitives
 
-Changes made via Lovable will be committed automatically to this repo.
+## Dashboard Views
 
-**Use your preferred IDE**
+The dashboard currently includes:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Total revenue
+- Total transactions
+- Average ticket size
+- Best-selling product by revenue
+- Peak sales hour
+- Revenue by hour of day
+- Revenue by coffee product
+- Monthly revenue trend
+- Revenue by weekday
+- Product revenue by time of day
 
-The only requirement is having Bun installed - [install Bun](https://bun.sh/docs/installation)
+## Tech Stack
 
-Follow these steps:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Recharts
+- PapaParse
+- Lucide React icons
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Project Structure
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-bun install
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-bun run dev
+```text
+.
+├── public/
+│   └── data/
+│       └── coffee_sales.csv
+├── src/
+│   ├── components/
+│   │   ├── dashboard/
+│   │   │   ├── charts/
+│   │   │   ├── ChartCard.tsx
+│   │   │   ├── FilterPanel.tsx
+│   │   │   └── KPICard.tsx
+│   │   └── ui/
+│   ├── hooks/
+│   │   └── useSalesData.ts
+│   ├── pages/
+│   │   └── Index.tsx
+│   ├── types/
+│   │   └── sales.ts
+│   └── index.css
+├── package.json
+└── README.md
 ```
 
-**Edit a file directly in GitHub**
+## Local Development
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Install dependencies:
 
-**Use GitHub Codespaces**
+```bash
+npm install
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Start the development server:
 
-## What technologies are used for this project?
+```bash
+npm run dev
+```
 
-This project is built with:
+Build for production:
 
-- Bun 1.3.4
-- Vite 7.2.7
-- TypeScript
-- React 19.2.1
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run build
+```
 
-## How can I deploy this project?
+Preview the production build:
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```bash
+npm run preview
+```
 
-## Can I connect a custom domain to my Lovable project?
+## Data Workflow
 
-Yes, you can!
+The app reads `public/data/coffee_sales.csv` at runtime. The `useSalesData` hook parses the CSV, filters the records, and derives all dashboard data models in memory.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Key derived outputs:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- KPI summary
+- Product revenue ranking
+- Hourly revenue
+- Monthly revenue
+- Weekday revenue
+- Product revenue by time of day
+
+## Portfolio Skills Demonstrated
+
+- Frontend product design and responsive UI implementation
+- React component composition and state-driven filtering
+- Browser-side CSV parsing and data transformation
+- Dashboard analytics and KPI modeling
+- Chart design with Recharts
+- Tailwind-based design system refinement
+- Clear project documentation for recruiters and reviewers
+
+## Notes
+
+This project is intentionally lightweight: it does not require a backend, database, or authentication. It is suitable for static deployment and can be adapted to other small business datasets by replacing the CSV and mapping the relevant fields.
